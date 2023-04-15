@@ -1,1 +1,1 @@
-emulator @pixel6
+emulator @pixel6 &
