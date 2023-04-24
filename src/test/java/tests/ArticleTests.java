@@ -4,8 +4,8 @@ import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
 import lib.ui.SearchPageObject;
 import org.junit.Test;
-import tests.factories.ArticlePageObjectFactory;
-import tests.factories.SearchPageObjectFactory;
+import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.SearchPageObjectFactory;
 
 public class ArticleTests extends CoreTestCase {
 
@@ -14,7 +14,7 @@ public class ArticleTests extends CoreTestCase {
 
 
         String search_line = "Java";
-        String search_result_to_click_on = "Object-oriented programming language";
+        String search_result_to_click_on = "bject-oriented programming language";
         String expected_article_title = "Java (programming language)";
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);

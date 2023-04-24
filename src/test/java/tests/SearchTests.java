@@ -3,7 +3,7 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
 import org.junit.Test;
-import tests.factories.SearchPageObjectFactory;
+import lib.ui.factories.SearchPageObjectFactory;
 
 public class SearchTests extends CoreTestCase {
 
@@ -12,7 +12,7 @@ public class SearchTests extends CoreTestCase {
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
-        SearchPageObject.waitForSearchResults("Object-oriented programming language");
+        SearchPageObject.waitForSearchResults("bject-oriented programming language");
     }
 
     @Test

@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.List;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -19,7 +20,7 @@ abstract public class SearchPageObject extends MainPageObject{
         SEARCH_RESULT_ELEMENT,
         SEARCH_EMPTY_RESULT_ELEMENT;
 
-    public SearchPageObject(AppiumDriver driver) {
+    public SearchPageObject(RemoteWebDriver driver) {
         super(driver);
     }
 
