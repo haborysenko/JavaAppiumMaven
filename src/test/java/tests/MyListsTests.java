@@ -3,6 +3,7 @@ package tests;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
+import org.junit.Assert;
 import org.junit.Test;
 import lib.ui.factories.ArticlePageObjectFactory;
 import lib.ui.factories.MyListsPageObjectFactory;
@@ -20,10 +21,11 @@ public class MyListsTests extends CoreTestCase {
     @Test
     public void testSaveFirstArticleToMyList() {
         String search_line = "Java";
-        String search_result_to_click_on = "bject-oriented programming language";
+        String search_result_to_click_on = "programming";
         String folder_name = "Learning programming";
         String article_title_substring = "Java";
 
+        // 1. Search by line and save titles with search query substring in list.
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_line);
@@ -53,11 +55,9 @@ public class MyListsTests extends CoreTestCase {
 
             ArticlePageObject.waitForTitleElement();
 
-            assertEquals("We are not on the same page after login.",
+            Assert.assertEquals("We are not on the same page after login.",
                     article_title,
                     ArticlePageObject.getArticleTitle());
-
-            //ArticlePageObject.addArticlesToMySaved();
         }
 
         if(Platform.getInstance().isAndroid() || Platform.getInstance().isIOS()) {
@@ -92,12 +92,14 @@ public class MyListsTests extends CoreTestCase {
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_line);
         List<String> titles_in_search_results = SearchPageObject.getArticleTitlesFromSearchResults(article_title_substring);
+        System.out.println(titles_in_search_results);
 
         // 2. Save the first two search results to a new folder with a specified name.
         for (int i = 0; i < 2; i++) {
             // get title of article 'i',  open it & wait till title is shown
             String title = titles_in_search_results.get(i);
             SearchPageObject.clickByArticleWithSubstring(title);
+            System.out.println(title);
             ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
             ArticlePageObject.waitForTitleElementWithSubstring(article_title_substring);
 
@@ -110,10 +112,28 @@ public class MyListsTests extends CoreTestCase {
             } else {
                 ArticlePageObject.addArticlesToMySaved();
             }
-            ArticlePageObject.closeArticle();
 
-            // for iOS after close article search query still is in the search field, for Android we have to enter again
-            if(Platform.getInstance().isAndroid()) {
+            // if mobile-web login only once
+            if(Platform.getInstance().isMw() && i == 0){
+                AuthorizationPageObject Auth = new AuthorizationPageObject(driver);
+                Auth.clickAuthButton();
+                Auth.enterLoginData(login, password);
+                Auth.submitForm();
+
+                String url = driver.getCurrentUrl();
+                String new_url = url.substring(0,11) + "m." + url.substring(11);
+                driver.get(new_url);
+
+                ArticlePageObject.waitForTitleElement();
+            }
+
+            // if ios or android - close article
+            if(Platform.getInstance().isAndroid() || Platform.getInstance().isIOS()) {
+                ArticlePageObject.closeArticle();
+            }
+
+            // for iOS after close article search query still is in the search field, for Android of web we have to enter again
+            if(Platform.getInstance().isAndroid() || Platform.getInstance().isMw()) {
                 SearchPageObject.initSearchInput();
                 SearchPageObject.typeSearchLine(search_line);
             }
@@ -125,19 +145,21 @@ public class MyListsTests extends CoreTestCase {
         }
 
         NavigationUI NavigationUI = NavigationUIFactory.get(driver);
+        NavigationUI.openNavigation();
         NavigationUI.clickMyLists();
 
         MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
         if(Platform.getInstance().isIOS()){
             MyListsPageObject.clickToCloseLoginSuggestion();
-        }else {
+        }else if (Platform.getInstance().isAndroid()){
             MyListsPageObject.openFolderByName(folder_name);
         }
+
         List<String> titles_in_my_list_before_delete = MyListsPageObject.getArticleTitlesFromMyList(article_title_substring);
 
         // verify that amount of articles before delete is 2
         int amount_of_search_results_before_delete = titles_in_my_list_before_delete.size();
-        assertEquals(
+        Assert.assertEquals(
                 "Incorrect amount before delete",
                 2,
                 amount_of_search_results_before_delete);
@@ -148,7 +170,7 @@ public class MyListsTests extends CoreTestCase {
         // verify that amount of articles after delete is 1
         List<String> titles_in_my_list_after_delete = MyListsPageObject.getArticleTitlesFromMyList(article_title_substring);
         int amount_of_search_results_after_delete = titles_in_my_list_after_delete.size();
-        assertEquals(
+        Assert.assertEquals(
                 "Incorrect amount after delete",
                 1,
                 amount_of_search_results_after_delete);
@@ -157,7 +179,7 @@ public class MyListsTests extends CoreTestCase {
         MyListsPageObject.clickByArticleWithSubstring(titles_in_my_list_before_delete.get(1));
         ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         String article_title = ArticlePageObject.getArticleTitle();
-        assertEquals(
+        Assert.assertEquals(
                 "Titles are not the same",
                 article_title,
                 titles_in_my_list_before_delete.get(1)

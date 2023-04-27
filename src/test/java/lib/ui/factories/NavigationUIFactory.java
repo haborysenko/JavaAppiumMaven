@@ -8,7 +8,6 @@ import lib.ui.android.AndroidNavigationUI;
 import lib.ui.ios.iOSNavigationUI;
 
 public class NavigationUIFactory {
-
     public static NavigationUI get(RemoteWebDriver driver) {
         if(Platform.getInstance().isAndroid()) {
             return new AndroidNavigationUI(driver);

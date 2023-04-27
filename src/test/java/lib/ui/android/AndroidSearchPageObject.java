@@ -4,7 +4,6 @@ import lib.ui.SearchPageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AndroidSearchPageObject extends SearchPageObject {
-
     static {
                 SEARCH_INIT_ELEMENT = "xpath://*[contains(@text,'Search Wikipedia')]";
                 SEARCH_INPUT = "xpath://*[contains(@text,'Search…')]";

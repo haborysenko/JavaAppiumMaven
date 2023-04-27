@@ -10,7 +10,6 @@ import lib.ui.android.AndroidArticlePageObject;
 import lib.ui.ios.iOSArticlePageObject;
 
 public class ArticlePageObjectFactory {
-
     public static ArticlePageObject get(RemoteWebDriver driver) {
         if(Platform.getInstance().isAndroid()) {
             return new AndroidArticlePageObject(driver);

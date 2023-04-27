@@ -4,7 +4,6 @@ import lib.ui.ArticlePageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class iOSArticlePageObject extends ArticlePageObject {
-
     static {
         //TITLE = "xpath:(//XCUIElementTypeStaticText[@name='Java (programming language)'])[1]";
         TITLE = "xpath:(//XCUIElementTypeStaticText[contains(@name,'Appi')])[1]";

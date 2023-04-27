@@ -4,7 +4,6 @@ import lib.ui.ArticlePageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AndroidArticlePageObject extends ArticlePageObject{
-
     static {
                 TITLE = "id:org.wikipedia:id/view_page_title_text";
                 TITLE_BY_SUBSTRING_TPL = "xpath://android.widget.TextView[contains(@text,'{SUBSTRING}')]";

@@ -4,7 +4,6 @@ import lib.ui.SearchPageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class iOSSearchPageObject extends SearchPageObject {
-
     static {
         SEARCH_INIT_ELEMENT = "xpath://XCUIElementTypeSearchField[@name='Search Wikipedia']";
         SEARCH_INPUT = "id:Search Wikipedia";

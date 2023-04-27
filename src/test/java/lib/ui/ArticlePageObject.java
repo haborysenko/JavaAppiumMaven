@@ -149,7 +149,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
                 "Cannot find option to add article to reading list",
-                5);
+                10);
     }
 
      public void closeArticle() {

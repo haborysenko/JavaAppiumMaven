@@ -8,7 +8,6 @@ import lib.ui.ios.iOSSearchPageObject;
 import lib.ui.mobile_web.MWSearchPageObject;
 
 public class SearchPageObjectFactory {
-
     public static SearchPageObject get(RemoteWebDriver driver) {
         if(Platform.getInstance().isAndroid()) {
             return new AndroidSearchPageObject(driver);

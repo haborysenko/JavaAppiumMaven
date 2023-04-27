@@ -1,6 +1,5 @@
 package lib.ui;
 
-import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -122,10 +121,16 @@ abstract public class SearchPageObject extends MainPageObject{
                             "text",
                             "Cannot get article title attribute",
                             30);
-                } else {
+                } else if (Platform.getInstance().isIOS()){
                     return this.waitForElementsAndGetAttribute(
                             search_result_element_xpath,
                             "name",
+                            "Cannot get article title attribute",
+                            30);
+                } else {
+                    return this.waitForElementsAndGetAttribute(
+                            search_result_element_xpath,
+                            "textContent",
                             "Cannot get article title attribute",
                             30);
                 }
