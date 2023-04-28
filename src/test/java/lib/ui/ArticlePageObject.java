@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import lib.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -19,7 +20,6 @@ abstract public class ArticlePageObject extends MainPageObject {
             CLOSE_ARTICLE_BUTTON;
 
     public ArticlePageObject(RemoteWebDriver driver) {
-
         super(driver);
     }
 
@@ -29,6 +29,7 @@ abstract public class ArticlePageObject extends MainPageObject {
     }
     /*TEMPLATE METHODS*/
 
+    @Step("Waiting for article title")
     public WebElement waitForTitleElement() {
         return this.waitForElementPresent(
                 TITLE,
@@ -36,6 +37,7 @@ abstract public class ArticlePageObject extends MainPageObject {
                 30);
     }
 
+    @Step("Waiting for article title with text '{substring}'")
     public WebElement waitForTitleElementWithSubstring(String substring) {
         String title_element_xpath = getTitleElementWithSubstring(substring);
         return this.waitForElementPresent(
@@ -44,6 +46,7 @@ abstract public class ArticlePageObject extends MainPageObject {
                 30);
     }
 
+    @Step("Getting article title")
     public String getArticleTitle() {
         WebElement title_element = waitForTitleElement();
         if(Platform.getInstance().isAndroid()) {
@@ -55,6 +58,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         }
     }
 
+    @Step("Swiping article to the footer")
     public void swipeToFooter() {
         if(Platform.getInstance().isAndroid()) {
             this.swipeUpToFindElement(
@@ -76,7 +80,7 @@ abstract public class ArticlePageObject extends MainPageObject {
 
     }
 
-    //Android
+    @Step("Adding article to the new folder with name '{name_of_folder}'")
     public void addArticleToMyNewList(String name_of_folder) {
         //more options
         this.waitForElementAndClick(
@@ -121,7 +125,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         );
     }
 
-    //Android
+    @Step("Adding article to the existing folder with name '{name_of_existing_folder}'")
     public void addArticleToMyExistingList(String name_of_existing_folder) {
         this.waitForElementAndClick(
                 OPTIONS_BUTTON,
@@ -142,16 +146,18 @@ abstract public class ArticlePageObject extends MainPageObject {
         );
     }
 
+    @Step("Adding article my saved")
     public void addArticlesToMySaved() {
         if(Platform.getInstance().isMw()){
             this.removeArticleFromSavedIfItAdded();
         }
-        this.waitForElementAndClick(
+        this.tryClickElementWithFewAttempts(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
                 "Cannot find option to add article to reading list",
                 10);
     }
 
+    @Step("Closing opened on screen article")
      public void closeArticle() {
         if(Platform.getInstance().isIOS() || Platform.getInstance().isAndroid()){
             this.waitForElementAndClick(
@@ -164,15 +170,17 @@ abstract public class ArticlePageObject extends MainPageObject {
         }
      }
 
+    @Step("Verifying that article title is shown")
     public void assertThereIsTitleOfArticle() {
         this.assertElementPresent(
                 TITLE,
                 "Title of article is not found");
     }
 
+    @Step("Clearing saved list by removing previously added article")
     public void removeArticleFromSavedIfItAdded() {
         if(this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)) {
-            this.waitForElementAndClick(
+            this.tryClickElementWithFewAttempts(
                     OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
                     "Cannot click button to remove an article from saved",
                     1

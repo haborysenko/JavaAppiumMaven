@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
@@ -19,6 +21,11 @@ public class MyListsTests extends CoreTestCase {
         password = "Welcome123!";
 
     @Test
+    @Features(value = {@Feature(value="Search"),@Feature(value="Article"), @Feature(value="MyList")})
+    @DisplayName("Saving first article to my list")
+    @Description("In this case we search, open article, save to my list and delete after")
+    @Step("Starting testSaveFirstArticleToMyList()")
+    @Severity(value = SeverityLevel.BLOCKER)
     public void testSaveFirstArticleToMyList() {
         String search_line = "Java";
         String search_result_to_click_on = "programming";
@@ -82,6 +89,11 @@ public class MyListsTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value = {@Feature(value="Search"),@Feature(value="Article"), @Feature(value="MyList")})
+    @DisplayName("Saving two articles to my list and removing the one after")
+    @Description("In this case we search, save two articles to my list and delete one after")
+    @Step("Starting testSaveTwoArticlesAndRemoveFirstAfterwards()")
+    @Severity(value = SeverityLevel.MINOR)
     public void testSaveTwoArticlesAndRemoveFirstAfterwards() {
         String search_line = "Appium";
         String folder_name = "About Appium";

@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -35,33 +36,39 @@ abstract public class SearchPageObject extends MainPageObject{
     }
     /*TEMPLATE METHODS*/
 
+    @Step("Initializing the search filed")
     public void initSearchInput() {
         this.waitForElementPresent(
                 SEARCH_INIT_ELEMENT,
                  "Cannot find init search element with placeholder 'Search Wikipedia'");
+        screenshot(this.takeScreenshot("Search new screen"));
         this.waitForElementAndClick(
                 SEARCH_INIT_ELEMENT,
                 "Cannot find & click in init search element with placeholder 'Search Wikipedia'");
     }
 
+    @Step("Waiting for search cancel button to appear")
     public void waitForCancelButtonToAppear() {
         this.waitForElementPresent(
                 SEARCH_CANCEL_BUTTON,
                 "Cannot find search cancel button 'X'");
     }
 
+    @Step("Waiting for search cancel button to disappear")
     public void waitForCancelButtonToDisappear() {
         this.waitForElementNotPresent(
                 SEARCH_CANCEL_BUTTON,
                 "Search cancel button 'X' is still present");
     }
 
+    @Step("Clicking button to cancel search results")
     public void clickCancelSearch() {
         this.waitForElementAndClick(
                 SEARCH_CANCEL_BUTTON,
                 "Cannot fins and click search cancel button");
     }
 
+    @Step("Typing '{search_line}' to the search filed")
     public void typeSearchLine(String search_line) {
         this.waitForElementAndSendKeys(
                 SEARCH_INPUT,
@@ -69,12 +76,14 @@ abstract public class SearchPageObject extends MainPageObject{
                 "Cannot find and type into search input element");
     }
 
+    @Step("Clearing text from the search filed")
     public void clearSearchInputField() {
         this.waitForElementAndClearTextField(
                 SEARCH_INPUT,
                 "Cannot clear search input");
     }
 
+    @Step("Waiting till search results are present on the page")
     public void waitForSearchResults(String substring) {
         String search_result_element_xpath = getResultSearchElement(substring);
         this.waitForElementPresent(
@@ -83,6 +92,7 @@ abstract public class SearchPageObject extends MainPageObject{
                 30);
     }
 
+    @Step("Opening article by clicking on '{substring}' in search results")
     public void clickByArticleWithSubstring(String substring) {
         String search_result_element_xpath = getResultSearchElement(substring);
         this.waitForElementAndClick(
@@ -91,6 +101,7 @@ abstract public class SearchPageObject extends MainPageObject{
                 30);
     }
 
+    @Step("Getting amount of found articles")
     public int getAmountOfFoundArticles() {
         //wait till at leas one is shown
         this.waitForElementPresent(
@@ -105,6 +116,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Verifying that each article in the search result list contains entered '{search_line}'")
     public void assertThatEachTitleInSearchResultsContainSearchLine(String search_line) {
         List<String> titles = this.getArticleTitlesFromSearchResults(search_line);
 
@@ -113,6 +125,7 @@ abstract public class SearchPageObject extends MainPageObject{
         }
     }
 
+    @Step("Getting list of articles titles with '{substring}' from search results")
     public List<String> getArticleTitlesFromSearchResults(String substring) {
         String search_result_element_xpath = getResultSearchElement(substring);
                 if(Platform.getInstance().isAndroid()) {
@@ -136,6 +149,7 @@ abstract public class SearchPageObject extends MainPageObject{
                 }
     }
 
+    @Step("Waiting for empty results label")
     public void waitForEmptyResultsLabel() {
         this.waitForElementPresent(
                 SEARCH_EMPTY_RESULT_ELEMENT,
@@ -144,12 +158,14 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Verifying that there is no search results")
     public void assertThereIsNoResultOfSearch() {
         this.assertElementNotPresent(
                 SEARCH_RESULT_ELEMENT,
                 "We've found some results, but not suppose");
     }
 
+    @Step("Waiting for initializing of the search input")
     public WebElement waitForSearchInitInput() {
         return this.waitForElementPresent(
                 SEARCH_INIT_ELEMENT,
@@ -157,15 +173,19 @@ abstract public class SearchPageObject extends MainPageObject{
                 30);
     }
 
+    @Step("Getting text of the search filed placeholder")
     public String getSearchInitInputPlaceholderText() {
         WebElement search_placeholder = waitForSearchInitInput();
         if(Platform.getInstance().isAndroid()) {
             return search_placeholder.getAttribute("text");
+        } else if(Platform.getInstance().isIOS()){
+            return search_placeholder.getAttribute("name");
         } else {
-            return search_placeholder.getAttribute("name"); //label
+            return search_placeholder.getAttribute("textContent");
         }
     }
 
+    @Step("Verifying that the search filed has placeholder as we expect: '{expected_placeholder}'")
     public void assertSearchInitInputPlaceholderHasExactText(String expected_placeholder) {
         this.assertElementHasExactText(
                 SEARCH_INIT_ELEMENT,
@@ -173,6 +193,7 @@ abstract public class SearchPageObject extends MainPageObject{
                 "Init search placeholder does not have exact text " + expected_placeholder);
     }
 
+    @Step("Verifying that the search filed contains text '{expected_placeholder}' in placeholder")
     public void assertSearchInitInputPlaceholderContainsText(String expected_placeholder) {
         this.textToBePresentInElementLocated(
                 SEARCH_INIT_ELEMENT,

@@ -5,30 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0659c4c2-d61e-4e12-884e-fd7313894abe" name="Changes" comment="Lesson IX. Selenium and tests for Web">
+      <change afterPath="$PROJECT_DIR$/Search new screen_screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Search screen_screenshot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ArticlePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/AuthorizationPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/AuthorizationPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MainPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MyListsPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/NavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/NavigationUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/SearchPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/WelcomePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/WelcomePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidMyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidMyListsPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidNavigationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/factories/ArticlePageObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/factories/ArticlePageObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/factories/MyListsPageObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/factories/MyListsPageObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/factories/NavigationUIFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/factories/NavigationUIFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/factories/SearchPageObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/factories/SearchPageObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSMyListsPageObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSMyListsPageObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSNavigationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/iOSSearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWNavigationUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWArticlePageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/mobile_web/MWSearchPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/ArticleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ArticleTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/ChangeAppConditionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ChangeAppConditionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/GetStartedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/GetStartedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/MyListsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MyListsTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchTests.java" afterDir="false" />
     </list>
@@ -77,26 +69,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MyListsTests.testSaveTwoArticlesAndRemoveFirstAfterwards">
-    <configuration name="ArticleTests.testArticleTitlePresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ArticleTests" />
-      <option name="METHOD_NAME" value="testArticleTitlePresent" />
-      <option name="TEST_OBJECT" value="method" />
-      <envs>
-        <env name="PLATFORM" value="mobile_web" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MyListsTests.testSaveFirstArticleToMyList">
     <configuration name="ArticleTests.testCompareArticleTitle" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="JavaAppium" />
       <extension name="coverage">
@@ -108,25 +81,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ArticleTests" />
       <option name="METHOD_NAME" value="testCompareArticleTitle" />
-      <option name="TEST_OBJECT" value="method" />
-      <envs>
-        <env name="PLATFORM" value="mobile_web" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArticleTests.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ArticleTests" />
-      <option name="METHOD_NAME" value="testSwipeArticle" />
       <option name="TEST_OBJECT" value="method" />
       <envs>
         <env name="PLATFORM" value="mobile_web" />
@@ -154,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyListsTests.testSaveTwoArticlesAndRemoveFirstAfterwards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTests.testCancelSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppium" />
       <extension name="coverage">
         <pattern>
@@ -163,8 +117,62 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.MyListsTests" />
-      <option name="METHOD_NAME" value="testSaveTwoArticlesAndRemoveFirstAfterwards" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchTests" />
+      <option name="METHOD_NAME" value="testCancelSearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="PLATFORM" value="mobile_web" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests.testSearchPlaceholderHasExactExpectedText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchPlaceholderHasExactExpectedText" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests.testSearchPlaceholderHasExactExpectedTextWithUsingSimpleAssert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchPlaceholderHasExactExpectedTextWithUsingSimpleAssert" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="PLATFORM" value="mobile_web" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests.testSearchResultsByStringAndCancelSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchResultsByStringAndCancelSearch" />
       <option name="TEST_OBJECT" value="method" />
       <envs>
         <env name="PLATFORM" value="mobile_web" />
@@ -230,17 +238,19 @@
       <item itemvalue="JUnit.mobile_web" />
       <item itemvalue="JUnit.ios" />
       <item itemvalue="JUnit.android" />
-      <item itemvalue="JUnit.MyListsTests.testSaveTwoArticlesAndRemoveFirstAfterwards" />
       <item itemvalue="JUnit.MyListsTests.testSaveFirstArticleToMyList" />
-      <item itemvalue="JUnit.ArticleTests.testArticleTitlePresent" />
-      <item itemvalue="JUnit.ArticleTests.testSwipeArticle" />
+      <item itemvalue="JUnit.SearchTests.testCancelSearch" />
+      <item itemvalue="JUnit.SearchTests.testSearchPlaceholderHasExactExpectedText" />
+      <item itemvalue="JUnit.SearchTests.testSearchPlaceholderHasExactExpectedTextWithUsingSimpleAssert" />
+      <item itemvalue="JUnit.SearchTests.testSearchResultsByStringAndCancelSearch" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MyListsTests.testSaveTwoArticlesAndRemoveFirstAfterwards" />
         <item itemvalue="JUnit.MyListsTests.testSaveFirstArticleToMyList" />
-        <item itemvalue="JUnit.ArticleTests.testSwipeArticle" />
-        <item itemvalue="JUnit.ArticleTests.testArticleTitlePresent" />
+        <item itemvalue="JUnit.SearchTests.testCancelSearch" />
+        <item itemvalue="JUnit.SearchTests.testSearchPlaceholderHasExactExpectedText" />
+        <item itemvalue="JUnit.SearchTests.testSearchPlaceholderHasExactExpectedTextWithUsingSimpleAssert" />
+        <item itemvalue="JUnit.SearchTests.testSearchResultsByStringAndCancelSearch" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682367164077</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Lesson IX. Selenium and tests for Web">
+      <created>1682633783665</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682633783665</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

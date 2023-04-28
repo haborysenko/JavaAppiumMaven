@@ -10,7 +10,9 @@ public class MWArticlePageObject extends ArticlePageObject {
         FOOTER_ELEMENT = "css:footer";
         CLOSE_ARTICLE_BUTTON = "id:Back";
         OPTIONS_ADD_TO_MY_LIST_BUTTON = "css:#page-actions [title='Watch']"; //#page-actions a#ca-watch
-        OPTIONS_REMOVE_FROM_MY_LIST_BUTTON = "css:#page-actions a#ca-watch[class*='watched']";
+        //OPTIONS_ADD_TO_MY_LIST_BUTTON = "xpath://*[@id='ca-watch']";
+        //OPTIONS_REMOVE_FROM_MY_LIST_BUTTON = "css:#page-actions a#ca-watch[class*='watched']";
+        OPTIONS_REMOVE_FROM_MY_LIST_BUTTON = "css:#page-actions li#ca-watch.mw-ui-icon-mf-unwatched button";
     }
 
     public MWArticlePageObject(RemoteWebDriver driver) {

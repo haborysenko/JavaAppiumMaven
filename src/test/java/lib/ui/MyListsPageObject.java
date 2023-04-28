@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -16,7 +17,6 @@ abstract public class MyListsPageObject extends MainPageObject {
             REMOVED_FROM_SAVED_BUTTON;
 
     public MyListsPageObject(RemoteWebDriver driver) {
-
         super(driver);
     }
 
@@ -34,6 +34,7 @@ abstract public class MyListsPageObject extends MainPageObject {
     }
     /*TEMPLATE METHODS*/
 
+    @Step("Opening folder with name '{folder_name}'")
     public void openFolderByName(String folder_name) {
         String folder_name_xpath = getFolderXpathByName(folder_name);
         this.waitForElementAndClick(
@@ -43,6 +44,7 @@ abstract public class MyListsPageObject extends MainPageObject {
         );
     }
 
+    @Step("Waiting article to appear by title '{article_title}'")
     public void waitForArticleToAppearByTitle(String article_title) {
         String article_title_xpath = getSavedArticleXpathByTitle(article_title);
         this.waitForElementPresent(
@@ -51,6 +53,7 @@ abstract public class MyListsPageObject extends MainPageObject {
         );
     }
 
+    @Step("Getting list of article titles")
     public List<String> getArticleTitlesFromMyList(String article_title) {
         String article_title_xpath = getSavedArticleXpathByTitle(article_title);
         if(Platform.getInstance().isAndroid()){
@@ -68,20 +71,20 @@ abstract public class MyListsPageObject extends MainPageObject {
         }
     }
 
+    @Step("Getting amount of articles in the search results (without scroll)")
     public int getAmountOfFoundArticles() {
-        //wait till at leas one is shown
+        //wait till at least one is shown
         this.waitForElementPresent(
                 ARTICLE_TITLE,
                 "Cannot find anything",
                 15
         );
-
-        //get amount of elements
         return this.getAmountOfElements(
                 ARTICLE_TITLE
         );
     }
 
+    @Step("Waiting for article disappear by title '{article_title}'")
     public void waitForArticleToDisappearByTitle(String article_title) {
         String article_title_xpath = getSavedArticleXpathByTitle(article_title);
         this.waitForElementNotPresent(
@@ -90,6 +93,7 @@ abstract public class MyListsPageObject extends MainPageObject {
         );
     }
 
+    @Step("Deleting article")
     public void swipeByArticleToDelete(String article_title) {
         this.waitForArticleToAppearByTitle(article_title);
         String article_xpath = getSavedArticleXpathByTitle(article_title);
@@ -120,7 +124,7 @@ abstract public class MyListsPageObject extends MainPageObject {
 
         this.waitForArticleToDisappearByTitle(article_title);
     }
-
+    @Step("Opening article with substring '{substring}'")
     public void clickByArticleWithSubstring(String substring) {
         String article_title_element_xpath = getSavedArticleXpathByTitle(substring);
         this.waitForElementAndClick(
@@ -129,7 +133,7 @@ abstract public class MyListsPageObject extends MainPageObject {
                 30);
     }
 
-    //for iOS
+    @Step("Closing login suggestion only for iOS")
     public void clickToCloseLoginSuggestion() {
         this.waitForElementAndClick(
                 CLOSE_LOGIN_SUGGESTION,
